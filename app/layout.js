@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import NavLink from './nav-link';
+import './globals.css';
+import MainNavigation from '../components/ui/main-navigation';
 /**
  * Place to import libraries like for example
  * import "talwindcss/talwind.css"
@@ -19,13 +19,7 @@ export default function RooLayout({ children }) {
 			</head>
 			<body>
 				<header>
-					<nav>
-						{/* <Link href='/'>Home</Link>
-						<Link href='/movies'>Movies</Link> */}
-						<NavLink href='/'>Home</NavLink>
-						<NavLink href='/movies'>Movies</NavLink>
-						<NavLink href='/dogs'>Dogs</NavLink>
-					</nav>
+					<MainNavigation />
 				</header>
 				{children}
 			</body>
