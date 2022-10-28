@@ -1,3 +1,3 @@
 export default function Loading() {
-	return <p>Loading the App...</p>;
+	return <p>Wait for the Dogs...</p>;
 }
