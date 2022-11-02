@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { use } from 'react';
 import DogsList from './dogs-list';
 
