@@ -1,5 +1,3 @@
 export default function Page(context) {
-	// * context: {params: {}, searchParams: {}}
-	console.info('DogsPage - ', context);
-	return <p>Dogs Details Page</p>;
+	return <h1 style={{ textAlign: 'center' }}>I 💙 Dogs</h1>;
 }
