@@ -1,5 +1,7 @@
 import Image from 'next/image';
+// import { notFound } from 'next/navigation';
 import { use } from 'react';
+// import NotFound from '../not-found';
 
 import classes from './dogDetails.module.css';
 
@@ -13,6 +15,11 @@ async function getDog(id) {
 
 export default function Page({ params }) {
 	const dog = use(getDog(params.id));
+
+	// ! Feature not tested
+	// if (!dog) {
+	// 	NotFound();
+	// }
 
 	return (
 		<article className={classes.details}>
@@ -37,13 +44,13 @@ export default function Page({ params }) {
 	);
 }
 
-export async function generateStaticParams() {
-	const order = 'ASC';
-	const res = await fetch(
-		`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=${order}&page=0&limit=5`,
-		{ headers: { 'x-api-key': process.env.DOGS_API_HEADER_VALUE } }
-	);
-	const dogs = await res.json();
+// export async function generateStaticParams() {
+// 	const order = 'ASC';
+// 	const res = await fetch(
+// 		`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=${order}&page=0&limit=5`,
+// 		{ headers: { 'x-api-key': process.env.DOGS_API_HEADER_VALUE } }
+// 	);
+// 	const dogs = await res.json();
 
-	return dogs.map((dog) => ({ id: dog.id }));
-}
+// 	return dogs.map((dog) => ({ id: dog.id }));
+// }
