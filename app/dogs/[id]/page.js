@@ -44,13 +44,13 @@ export default function Page({ params }) {
 	);
 }
 
-// export async function generateStaticParams() {
-// 	const order = 'ASC';
-// 	const res = await fetch(
-// 		`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=${order}&page=0&limit=5`,
-// 		{ headers: { 'x-api-key': process.env.DOGS_API_HEADER_VALUE } }
-// 	);
-// 	const dogs = await res.json();
+export async function generateStaticParams() {
+	const order = 'ASC';
+	const res = await fetch(
+		`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=${order}&page=0&limit=5`,
+		{ headers: { 'x-api-key': process.env.DOGS_API_HEADER_VALUE } }
+	);
+	const dogs = await res.json();
 
-// 	return dogs.map((dog) => ({ id: dog.id }));
-// }
+	return dogs.map((dog) => ({ id: dog.id }));
+}
